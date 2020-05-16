@@ -72,7 +72,11 @@ public class SVGRenderer
 
        	// **
        	// ** TODO: Draw SVG contents here.
-       	// **
+       	// **starting below
+
+		decoratorCreator(g2dImage);
+
+
    	   	
        	if (!view.zoom())
        	{
@@ -100,5 +104,69 @@ public class SVGRenderer
 	}
 	
 	//-------------------------------------------------------------------------
+
+
+	public void decoratorCreator(Graphics2D g2dImage) {
+
+		SVG svg = parser.svg();
+		for (Element element : svg.elements()) {
+			Shape shape = null;
+			Decorator decorator = null;
+
+
+
+			switch (element.label()) {
+				case "circle":
+					shape = (Circle) element;
+					decorator = new
+							DecoratorGraphics2DCircle((Circle) shape, g2dImage);
+					break;
+				case "ellipse":
+					shape = (Ellipse) element;
+					decorator = new
+							DecoratorGraphics2DEllipse((Ellipse) shape, g2dImage);
+					break;
+
+				case "polyline":
+					shape = (Polyline) element;
+					decorator = new
+							DecoratorGraphics2DPolyline((Polyline) shape, g2dImage);
+					break;
+
+				case "polygon":
+					shape = (Polygon) element;
+					decorator = new
+							DecoratorGraphics2DPolygon((Polygon) shape, g2dImage);
+					break;
+				case "rect":
+					shape = (Rect) element;
+					decorator = new
+							DecoratorGraphics2DRect((Rect) shape, g2dImage);
+					break;
+
+			}
+			if(shape!= null){
+				checkStyle(g2dImage, shape);
+				decorator.render();
+			}
+		}
+	}
+
+	/**
+	 * Creates an according decoratoe for the shape style.
+	 * It will affect the Graphics2D
+	 * @param g2dImage
+	 * @param shape
+	 */
+	public void checkStyle(Graphics2D g2dImage, Shape shape){
+		for (Style style : shape.styles())
+			switch (style.label()) {
+				case "stroke-width":
+					new DecoratorGraphics2DStrokeWidth
+							((StrokeWidth)style, g2dImage).render();
+					break;
+			}
+
+	}
 
 }

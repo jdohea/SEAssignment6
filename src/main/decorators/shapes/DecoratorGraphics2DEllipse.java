@@ -3,6 +3,7 @@ package main.decorators.shapes;
 import java.awt.Graphics2D;
 
 import main.decorators.DecoratorGraphics2D;
+import svg.element.shape.Circle;
 import svg.element.shape.Ellipse;
 import svg.element.shape.Shape;
 
