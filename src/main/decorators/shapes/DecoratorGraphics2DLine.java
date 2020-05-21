@@ -9,9 +9,9 @@ import svg.element.shape.Shape;
 
 public class DecoratorGraphics2DLine extends DecoratorGraphics2D
 {
-	public DecoratorGraphics2DLine(final Line base, final Graphics2D g2d, Decorator decorator)
+	public DecoratorGraphics2DLine(final Line base, final Graphics2D g2d)
 	{
-		super(base, null, g2d, decorator);
+		super(base, null, g2d);
 	}
 
 	@Override

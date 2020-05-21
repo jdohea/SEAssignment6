@@ -10,9 +10,9 @@ import svg.element.shape.Shape;
 public class DecoratorGraphics2DEllipse extends DecoratorGraphics2D
 {
 
-	public DecoratorGraphics2DEllipse(final Ellipse base, final Graphics2D g2d, Decorator decorator)
+	public DecoratorGraphics2DEllipse(final Ellipse base, final Graphics2D g2d)
 	{
-		super(base, null, g2d,  decorator);
+		super(base, null, g2d);
 	}
 
 	@Override

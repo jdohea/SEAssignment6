@@ -11,9 +11,9 @@ import svg.element.shape.Shape;
 
 public class DecoratorGraphics2DPolyline extends DecoratorGraphics2D
 {
-	public DecoratorGraphics2DPolyline(final Polyline base, final Graphics2D g2d, Decorator decorator)
+	public DecoratorGraphics2DPolyline(final Polyline base, final Graphics2D g2d)
 	{
-		super(base, null, g2d,decorator );
+		super(base, null, g2d );
 	}
 
 	@Override

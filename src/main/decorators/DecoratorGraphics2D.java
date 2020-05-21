@@ -9,12 +9,11 @@ import svg.element.style.Style;
 public class DecoratorGraphics2D extends Decorator
 {
 	final protected Graphics2D graphics2D;
-	private Decorator wrapee;
-	public DecoratorGraphics2D(final BaseElement base, final Style style, final Graphics2D g2d, Decorator decorator)
+
+	public DecoratorGraphics2D(final BaseElement base, final Style style, final Graphics2D g2d)
 	{
 		super(base, style);
 		this.graphics2D = g2d;
-		this.wrapee=decorator;
 	}
 
 	@Override
@@ -33,9 +32,7 @@ public class DecoratorGraphics2D extends Decorator
 	public void render()  //Graphics2D g2d)
 	{
 		component.render();  //g2d);
-		if(wrapee!=null) {
-			wrapee.render();
-		}
+
 	}
 
 	@Override
@@ -44,5 +41,4 @@ public class DecoratorGraphics2D extends Decorator
 		component.setBounds();
 		
 	}
-
 }

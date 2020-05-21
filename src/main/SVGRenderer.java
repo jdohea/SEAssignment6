@@ -107,49 +107,17 @@ public class SVGRenderer
 
 
 	public void decoratorCreator(Graphics2D g2dImage) {
-		Decorator decorator = null;
+		DecoratorFactory factory = new DecoratorFactory(g2dImage);
 		SVG svg = parser.svg();
+		Decorator decorator;
 		for (Element element : svg.elements()) {
-			Shape shape = null;
-
-
-
-			switch (element.label()) {
-				case "circle":
-					shape = (Circle) element;
-					decorator = new
-							DecoratorGraphics2DCircle((Circle) shape, g2dImage, decorator);
-					break;
-				case "ellipse":
-					shape = (Ellipse) element;
-					decorator = new
-							DecoratorGraphics2DEllipse((Ellipse) shape, g2dImage, decorator);
-					break;
-
-				case "polyline":
-					shape = (Polyline) element;
-					decorator = new
-							DecoratorGraphics2DPolyline((Polyline) shape, g2dImage, decorator);
-					break;
-
-				case "polygon":
-					shape = (Polygon) element;
-					decorator = new
-							DecoratorGraphics2DPolygon((Polygon) shape, g2dImage, decorator);
-					break;
-				case "rect":
-					shape = (Rect) element;
-					decorator = new
-							DecoratorGraphics2DRect((Rect) shape, g2dImage, decorator);
-					break;
-
-			}
-			if(shape!= null){
+			Shape shape =(Shape) element;
+			decorator = factory.makeDecorator(shape);
+			if(decorator!= null){
 				checkStyle(g2dImage, shape);
-
+				decorator.render();
 			}
 		}
-		decorator.render();
 	}
 
 	/**

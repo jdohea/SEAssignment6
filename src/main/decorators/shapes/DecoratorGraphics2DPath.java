@@ -11,9 +11,9 @@ import svg.element.shape.path.PathOp;
 
 public class DecoratorGraphics2DPath extends DecoratorGraphics2D
 {
-	public DecoratorGraphics2DPath(final Path base, final Graphics2D g2d, Decorator decorator)
+	public DecoratorGraphics2DPath(final Path base, final Graphics2D g2d)
 	{
-		super(base, null, g2d,decorator );
+		super(base, null, g2d );
 	}
 
 	@Override
