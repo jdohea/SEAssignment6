@@ -2,15 +2,16 @@ package main.decorators.shapes;
 
 import java.awt.Graphics2D;
 
+import main.decorators.Decorator;
 import main.decorators.DecoratorGraphics2D;
 import svg.element.shape.Line;
 import svg.element.shape.Shape;
 
 public class DecoratorGraphics2DLine extends DecoratorGraphics2D
 {
-	public DecoratorGraphics2DLine(final Line base, final Graphics2D g2d)
+	public DecoratorGraphics2DLine(final Line base, final Graphics2D g2d, Decorator decorator)
 	{
-		super(base, null, g2d);
+		super(base, null, g2d, decorator);
 	}
 
 	@Override

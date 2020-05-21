@@ -4,15 +4,16 @@ import java.awt.Graphics2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 
+import main.decorators.Decorator;
 import main.decorators.DecoratorGraphics2D;
 import svg.element.shape.Polyline;
 import svg.element.shape.Shape;
 
 public class DecoratorGraphics2DPolyline extends DecoratorGraphics2D
 {
-	public DecoratorGraphics2DPolyline(final Polyline base, final Graphics2D g2d)
+	public DecoratorGraphics2DPolyline(final Polyline base, final Graphics2D g2d, Decorator decorator)
 	{
-		super(base, null, g2d);
+		super(base, null, g2d,decorator );
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package main.decorators.shapes;
 import java.awt.Graphics2D;
 import java.awt.geom.GeneralPath;
 
+import main.decorators.Decorator;
 import main.decorators.DecoratorGraphics2D;
 import svg.element.shape.Shape;
 import svg.element.shape.path.Path;
@@ -10,9 +11,9 @@ import svg.element.shape.path.PathOp;
 
 public class DecoratorGraphics2DPath extends DecoratorGraphics2D
 {
-	public DecoratorGraphics2DPath(final Path base, final Graphics2D g2d)
+	public DecoratorGraphics2DPath(final Path base, final Graphics2D g2d, Decorator decorator)
 	{
-		super(base, null, g2d);
+		super(base, null, g2d,decorator );
 	}
 
 	@Override

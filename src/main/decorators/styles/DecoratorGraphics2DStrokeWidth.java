@@ -10,7 +10,7 @@ public class DecoratorGraphics2DStrokeWidth extends DecoratorGraphics2D
 {
 	public DecoratorGraphics2DStrokeWidth(final StrokeWidth style, final Graphics2D g2d)
 	{
-		super(null, style, g2d);
+		super(null, style, g2d, null );
 	}
 
 	@Override

@@ -2,16 +2,17 @@ package main.decorators.shapes;
 
 import java.awt.Graphics2D;
 
+import main.decorators.Decorator;
 import main.decorators.DecoratorGraphics2D;
-import svg.element.shape.Circle;
 import svg.element.shape.Ellipse;
 import svg.element.shape.Shape;
 
 public class DecoratorGraphics2DEllipse extends DecoratorGraphics2D
 {
-	public DecoratorGraphics2DEllipse(final Ellipse base, final Graphics2D g2d)
+
+	public DecoratorGraphics2DEllipse(final Ellipse base, final Graphics2D g2d, Decorator decorator)
 	{
-		super(base, null, g2d);
+		super(base, null, g2d,  decorator);
 	}
 
 	@Override
