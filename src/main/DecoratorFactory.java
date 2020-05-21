@@ -63,6 +63,10 @@ public class DecoratorFactory {
                 decorator = new
                         DecoratorGraphics2DRect((Rect) shape, g2dImage);
                 break;
+            case "path":
+                    shape = (Path)element;
+                decorator = new
+                        DecoratorGraphics2DPath((Path)shape, g2dImage);
 
         }
         return decorator;
