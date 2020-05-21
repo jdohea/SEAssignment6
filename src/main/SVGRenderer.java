@@ -146,9 +146,10 @@ public class SVGRenderer
 			}
 			if(shape!= null){
 				checkStyle(g2dImage, shape);
-				decorator.render();
+
 			}
 		}
+		decorator.render();
 	}
 
 	/**
